@@ -87,3 +87,8 @@ export class Stack<T> {
     return this.data.length;
   }
 };
+
+export const round = (value: number, base: number) => {
+  const b = 10 ** base;
+  return Math.round(value * b) / b;
+};
