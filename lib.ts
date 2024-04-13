@@ -12,8 +12,8 @@ export const onReadLine = (cb: (line: string) => void) => { createInterface({ in
 export const println = (s: string | number) => console.log(s);
 export const print = (s: string):void => { process.stdout.write(s); };
 
-export const max = <T>(...v: T[]):T => v.reduce((p, c) => c > p ? c : p, v[0]);
-export const min = <T>(...v: T[]):T => v.reduce((p, c) => c < p ? c : p, v[0]);
+export const max = <T extends number | bigint>(v: T[]):T => v.reduce((p, c) => c > p ? c : p, v[0]);
+export const min = <T extends number | bigint>(v: T[]):T => v.reduce((p, c) => c < p ? c : p, v[0]);
 
 type _QueueData<T> = {
   data: T;
